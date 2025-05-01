@@ -1,0 +1,17 @@
+.about {
+  padding: var(--section-padding);
+  text-align: center;
+}
+
+.about h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.about p {
+  font-size: 1.125rem;
+  color: var(--text-color);
+  max-width: 600px;
+  margin: 0 auto;
+} 
