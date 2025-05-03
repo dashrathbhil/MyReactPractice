@@ -27,6 +27,10 @@ function HooksMenu() {
               <Link to="use-ref-hook"className="text-decoration-none">
               UseRef hook</Link>
             </li>
+            <li>
+              <Link to="use-context-hook"className="text-decoration-none">
+              UseContext hook</Link>
+            </li>
          </ul>
         </div>
         <div className="row">

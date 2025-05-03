@@ -8,6 +8,7 @@ import TaskUseState from "./UseStateHook/TaskUseState/TaskUseState";
 import UseStateMenu from "./UseStateHook/UseStateMenu";
 import ExplainUseReduce from "./UseReduceHook/ExplainUseReduce";
 import UseRef from "./UseRefHook/UseRef";
+import ExplainUseContext from "./UseContextHook/ExplainUseContext";
 
 function HooksRoute() {
   const routes = useRoutes([
@@ -40,6 +41,10 @@ function HooksRoute() {
         {
           path:"use-ref-hook",
           element:<UseRef/>
+        },
+        {
+          path:"use-context-hook",
+          element:<ExplainUseContext/>
         }
       ],
     },

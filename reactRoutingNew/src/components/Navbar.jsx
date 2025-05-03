@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router";
+import { ThemeContext } from "../pages/hooks/UseContextHook/ThemeContext";
 
 function Navbar() {
+  const { darkMode, toggleTheme } = useContext(ThemeContext);
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className={`navbar navbar-expand-lg ${
+        darkMode ? "navbar-dark bg-dark" : "navbar-light bg-light"
+      }`}>
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             Navbar
@@ -38,12 +42,11 @@ function Navbar() {
                 </Link>
               </li>
 
-              <li className="nav-item">
-                <Link className="nav-link" to="/taskusestate">
-                  Task of UseStates
-                </Link>
-              </li>
+             
             </ul>
+            {/* <button className="btn btn-outline-primary" onClick={toggleTheme}>
+              Toggle {darkMode ? "Light" : "Dark"} Mode
+            </button> */}
           </div>
         </div>
       </nav>
