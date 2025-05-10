@@ -26,7 +26,6 @@ function FormInputFocus() {
       return;
     }
 
-    alert("Form submitted!");
     nameRef.current.value = "";
     emailRef.current.value = "";
     passwordRef.current.value = "";
@@ -53,7 +52,7 @@ function FormInputFocus() {
           </div>
         </div>
 
-        {/* Email Field */}
+
         <div style={{ marginBottom: "15px" }}>
           <input
             ref={emailRef}
