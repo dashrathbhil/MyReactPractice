@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+/* variables */
+:root {
+    /* colors */
+  /* Purple Shades */
+  --electric-violet-500: #8A3BFF;   /* Electric Violet/500 */
+  --electric-violet-400:#A473FF ;   /* Electric Violet/400 */
+  --electric-violet-300: #C0A6FF;   /* Electric Violet/300 */
+  --electric-violet-200:#DACDFF ;   /* Electric Violet/200 */
+
+  /* Brand / Accent Colors */
+  --primary-color:#7300FF ;         /* Primary */
+  --star-color:#FFC700 ;            /* Star Color (Yellow) */
+
+  /* Backgrounds / Darks */
+  --dark-bg:#1A0B28 ;               /* Dark bg */
+  --grad-black: ;            /* Grad black */
+  --black-0:#000000 ;               /* Black 0 */
+  --pure-black: ;            /* 000000 */
+
+  /* Whites & Grays */
+  --white-100: #ffff;             /* FFFFFF 100% */
+  --white-75: ;              /* FFFFFF 75% */
+  --light-gray: ;            /* F8F8F8 */
+
+  /* Translucent / Gradient Related */
+  --translucent-purple: ;    /* Transluse2 */
+
+  /* Misc Purples */
+  --purple-7300ff:#7300FF;         /* 7300FF */
+  --purple-822aee-60:#822AEE ;      /* 822AEE 60% */
+
+/* fonts */
+
+
+}
+
