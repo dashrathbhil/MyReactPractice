@@ -1,0 +1,12 @@
+.style-container {
+  margin: 20px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.external-style {
+  color: darkblue;
+  background-color: lightblue;
+  padding: 10px;
+  border-radius: 5px;
+}
