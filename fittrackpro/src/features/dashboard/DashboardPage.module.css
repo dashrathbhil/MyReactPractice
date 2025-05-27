@@ -1,0 +1,495 @@
+.dashboardContainer {
+  padding: 1rem;
+  background: #f8fafc;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.greeting {
+  color: #888;
+  font-size: 16px;
+}
+
+.welcomeText {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.subscribeButton {
+  background: #fb923c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.headerIcon {
+  font-size: 22px;
+  color: #888;
+}
+
+.statWidgets {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.statWidgetCard {
+  flex: 0 0 calc(25% - 18px); /* Adjusted flex-basis slightly */
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 160px; /* Adjusted min-width */
+  box-sizing: border-box;
+  color: #fff; /* Default text color */
+}
+
+.statWidgetIcon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.statWidgetValue {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.statWidgetUnit {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.statWidgetSub {
+  font-size: 15px;
+  margin: 8px 0 0 0;
+  white-space: pre-line;
+}
+
+.chartsSection {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.chartCard {
+  /* background: #fff; */ /* Background color will be set by inline style */
+  border-radius: 12px; /* Adjusted border radius to be slightly larger */
+  padding: 20px;
+  box-sizing: border-box;
+  color: white; /* Text color for the charts as per images */
+  position: relative; /* Needed for absolute positioning of icon */
+  overflow: hidden; /* To contain elements within rounded corners */
+  display: flex; /* Use flexbox for internal layout */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Distribute space */
+  width: 100%; /* Ensure the card takes the full width of its container */
+  
+  /* Adding subtle background pattern */
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.1) 0,
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px,
+    transparent 5px
+  );
+  background-size: 10px 10px; /* Adjust size of the pattern */
+}
+
+.chartHeader {
+  display: flex; /* Arrange icon and label in a row */
+  align-items: center; /* Vertically align icon and label */
+  gap: 8px; /* Space between icon and label */
+  margin-bottom: 1rem; /* Space below the header */
+}
+
+.chartIcon {
+  font-size: 1.5rem; /* Slightly smaller icon size for header */
+  margin-bottom: 0; /* Remove bottom margin */
+}
+
+.chartLabel {
+  font-size: 1rem; /* Adjust label font size */
+  font-weight: normal; /* Adjust label font weight */
+  opacity: 0.9; /* Slightly less opaque */
+}
+
+.chartValueContainer {
+  display: flex; /* Arrange value and unit in a row */
+  align-items: baseline; /* Align text baselines */
+  gap: 8px; /* Space between value and unit */
+  margin-bottom: 1rem; /* Space below the value container */
+}
+
+.chartValue {
+  font-weight: bold;
+  font-size: 2.5rem; /* Keep large value size */
+  line-height: 1;
+}
+
+.chartUnit {
+  font-weight: normal;
+  font-size: 1rem; /* Keep unit size */
+  opacity: 0.9; /* Slightly less opaque */
+}
+
+.chartSub {
+  font-size: 0.9rem; /* Keep sub text size */
+  white-space: pre-line;
+  opacity: 0.9; /* Slightly less opaque */
+}
+
+/* Steps Chart Specific Styles */
+.progressBarContainer {
+  width: calc(100% - 0rem); /* Adjusted width to fill container */
+  height: 8px;
+  background: rgba(255, 255, 255, 0.5); /* Lighter track color */
+  border-radius: 4px;
+  margin: 1rem 0; /* Adjusted margin */
+  overflow: hidden; /* Ensure the progress bar is contained */
+}
+
+.progressBar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease-in-out; /* Smooth transition for progress */
+}
+
+/* Water Chart Specific Styles */
+.waterCircleContainer {
+  width: 120px; /* Adjusted size */
+  height: 120px; /* Adjusted size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto; /* Center the circle */
+  position: relative; /* For positioning the value text */
+}
+
+.waterCircleSvg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg); /* Start circle from the top */
+}
+
+.waterCircleBg {
+  stroke: rgba(255, 255, 255, 0.5); /* Lighter track color */
+  stroke-width: 10; /* Adjusted thickness */
+}
+
+.waterCircleSvg circle:last-child {
+   stroke: white; /* Progress color */
+   stroke-width: 10; /* Adjusted thickness */
+}
+
+.waterValueContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white; /* Text color */
+}
+
+.waterValue {
+  font-size: 1.8rem; /* Adjust size as needed */
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.waterUnit {
+  font-size: 1rem; /* Adjust size as needed */
+  opacity: 0.8;
+}
+
+/* Calories Chart Specific Styles */
+.caloriesGaugeContainer {
+  width: 100px; /* Adjusted size */
+  height: 100px; /* Adjusted size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto; /* Center the gauge */
+  position: relative; /* For positioning the text */
+}
+
+.caloriesGaugeSvg {
+   width: 100%;
+   height: 100%;
+   transform: rotate(180deg); /* Rotate to make it a bottom semi-circle */
+}
+
+.caloriesGaugeSvg circle:first-child {
+   stroke: rgba(255, 255, 255, 0.5); /* Lighter track color */
+   stroke-width: 8; /* Adjusted thickness */
+}
+
+.caloriesGaugeSvg circle:last-child {
+   stroke: white; /* Progress color */
+   stroke-width: 8; /* Adjusted thickness */
+}
+
+.caloriesGaugeText {
+  position: absolute;
+  bottom: 1rem; /* Position text below the gauge */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white; /* Text color */
+  text-align: center;
+}
+
+.caloriesLabel {
+  font-size: 1rem; /* Adjust size as needed */
+  opacity: 0.8;
+}
+
+.caloriesSub {
+  font-size: 1.2rem; /* Adjust size as needed */
+  font-weight: bold;
+}
+
+/* Heart Rate Chart Specific Styles */
+.heartRateSvgContainer {
+   width: 100%;
+   height: 80px; /* Adjusted height for the wave area */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0; /* Adjusted margin */
+}
+
+.heartRateSvg {
+  width: 100%; /* Make SVG width responsive */
+  height: 100%; /* Make SVG height responsive */
+  overflow: visible; /* Allow the wave to go slightly outside the viewBox if needed */
+}
+
+.heartRateSvg path {
+  stroke: white; /* Wave color */
+  stroke-width: 4; /* Adjusted thickness */
+  fill: none;
+}
+
+.heartRateValueContainer {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  justify-content: center; /* Center the value and unit */
+  margin-bottom: 0.5rem; /* Space below */
+}
+
+.heartRateValue {
+  font-size: 2rem; /* Adjusted size */
+  font-weight: bold;
+  line-height: 1;
+}
+
+.heartRateUnit {
+   font-size: 0.9rem; /* Adjusted size */
+   opacity: 0.8;
+}
+
+.trainersAndDiet {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.trainersSection {
+  flex: 1;
+  min-width: 280px; /* Adjusted min-width */
+}
+
+.sectionTitle {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.trainerList {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.trainerCard {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  min-width: 180px; /* Minimum width for trainer cards */
+  flex: 0 0 calc(50% - 8px); /* Aim for 2 per row */
+  box-sizing: border-box; /* Added box-sizing */
+}
+
+.trainerHeaderImg {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.trainerContent {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.trainerProfileImg {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  margin-top: -56px; /* Pull image up */
+  border: 3px solid #fff;
+  object-fit: cover;
+}
+
+.trainerName {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.trainerTitle {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.trainerStats {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+  color: #f59e42;
+}
+
+.trainerStatValue {
+ color: #888;
+ margin-left: 4px;
+}
+
+.trainerProfileLink {
+  color: #2563eb;
+  font-weight: bold;
+  font-size: 13px;
+  margin-top: 8px;
+  text-decoration: none;
+}
+
+.dietMenuSection {
+  flex: 1;
+  min-width: 280px; /* Adjusted min-width */
+}
+
+.dietMenuCard {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  padding: 0;
+}
+
+.dietMeal {
+  margin-bottom: 12px;
+}
+
+.dietHeaderImg {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.dietMealHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 0 16px;
+}
+
+.dietMealName {
+  color: #818cf8;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.dietMealTime {
+  color: #888;
+  font-size: 13px;
+}
+
+.dietItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  padding: 0 16px;
+}
+
+.dietItemImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.dietItemInfo {
+  flex: 1;
+}
+
+.dietItemName {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.dietItemStats {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  color: #888;
+}
+
+.dietItemProgressBar {
+  display: flex;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.progressBarSegment {
+  height: 4px;
+  border-radius: 2px;
+}
+
+/* Add more styles for trainers, diet menu later */
