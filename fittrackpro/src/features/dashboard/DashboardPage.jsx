@@ -8,8 +8,8 @@ import CaloriesChart from '../../components/charts/CaloriesChart';
 import HeartRateChart from '../../components/charts/HeartRateChart';
 
 const user = {
-  name: 'Thomas Fletcher',
-  location: 'Sydney, Australia',
+  name: 'Dashrath bhil',
+  location: 'India',
   avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
   weight: 75,
   height: 6.5,
