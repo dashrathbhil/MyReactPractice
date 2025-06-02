@@ -1,10 +1,12 @@
-import React from 'react'
-import QRGenerator from './components/QRGenerator'
+import React from "react";
+import QRGenerator from "./components/QRGenerator";
 
 function App() {
   return (
-  <QRGenerator/>
-  )
+    <>
+      <QRGenerator />
+    </>
+  );
 }
 
-export default App
+export default App;
