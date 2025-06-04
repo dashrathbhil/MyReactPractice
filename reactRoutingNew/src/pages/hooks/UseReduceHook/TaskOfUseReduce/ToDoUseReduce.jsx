@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useState } from "react";
+import React, { useEffect, useReducer, useState,useRef } from "react";
 
 function todoReducer(todos, action) {
   switch (action.type) {
@@ -29,21 +29,19 @@ function ToDoUseReduce() {
   const [todos, dispatch] = useReducer(todoReducer, []);
   const [task, setTask] = useState("");
   const [editingId, setEditingId] = useState(null);
-  useEffect(() => {
+    const inputRef = useRef(null);
+ useEffect(() => {
     const savedTodos = JSON.parse(localStorage.getItem("todos"));
     if (savedTodos) {
       dispatch({ type: "set", todos: savedTodos });
     }
   }, []);
 
-
   useEffect(() => {
-    if (todos.length === 0) {
-      localStorage.removeItem("todos");
-    } else {
-      localStorage.setItem("todos", JSON.stringify(todos));
+    if (editingId !== null && inputRef.current) {
+      inputRef.current.focus(); // NEW: Auto-focus on edit
     }
-  }, [todos]);
+  }, [editingId]);
   const addTodo = () => {
     if (task.trim() === "") return;
     if (editingId !== null) {
@@ -92,6 +90,7 @@ function ToDoUseReduce() {
       <div className="row align-items-center">
         <div className="col">
           <input
+            ref={inputRef}
             type="text"
             className="form-control"
             placeholder="Enter a Task Here...."
