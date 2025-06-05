@@ -43,7 +43,7 @@ function EmailLogin() {
           Email
         </label>
         <input
-          id="email"
+          id="email-id"
           type="email"
           className="form-control"
           placeholder="e.g. user@example.com"
@@ -58,7 +58,7 @@ function EmailLogin() {
           Password
         </label>
         <input
-          id="password"
+          id="password-id"
           type="password"
           className="form-control"
           placeholder="Enter your password"

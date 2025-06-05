@@ -7,10 +7,13 @@ import LoginForm from "./components/LoginForm";
 function App() {
   return (
     <>
-      <h1>Login </h1>
+     <div className="container">
+      <h1 className="text-center">Firebase Login</h1>
       <SignUp />
       <LoginForm/>
       <Logout />
+
+     </div>
     
     </>
   );

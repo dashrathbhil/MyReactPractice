@@ -3,6 +3,7 @@ import EmailLogin from './EmailLogin';
 import GoogleLogin from './GoogleLogin';
 import Facebook from './Facebook';
 import Github from './Github';
+import Profile from './Profile';
 
 function LoginForm() {
   return (
@@ -24,6 +25,7 @@ function LoginForm() {
           <Github />
         </div>
       </div>
+      <Profile/>
     </div>
   );
 }
