@@ -1,18 +1,17 @@
 import React from "react";
 import Logout from "./components/Logout";
-import GoogleLogin from "./components/GoogleLogin";
-import Facebook from "./components/Facebook";
-import Github from "./components/Github";
+import EmailLogin from "./components/EmailLogin";
+import SignUp from "./components/SignUp";
+import LoginForm from "./components/LoginForm";
 
 function App() {
   return (
     <>
       <h1>Login </h1>
-      <GoogleLogin />
+      <SignUp />
+      <LoginForm/>
       <Logout />
-      <Facebook/>
-      <Github/>
-      
+    
     </>
   );
 }
